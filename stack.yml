@@ -15,7 +15,7 @@ functions:
       com.openfaas.git-branch: master
       com.openfaas.git-owner: alexellis
       com.openfaas.git-repo: autoscaling-functions
-      com.openfaas.git-sha: HEAD
+      com.openfaas.git-sha: 16766fc0abc26bd1f73765a73875e6a760ddffd0
     annotations:
       com.openfaas.git-repo-url: https://github.com/alexellis/autoscaling-functions
       github: true
