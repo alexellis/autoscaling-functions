@@ -1,6 +1,7 @@
 package function
 
 import (
+	"crypto/rand"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -16,8 +17,8 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		body, _ = ioutil.ReadAll(r.Body)
 		defer r.Body.Close()
 	}
-	if r.URL.Query().Get("action") == "decode" {
 
+	if r.URL.Path == "/decode" {
 		if len(body) == 0 {
 			http.Error(w, "No body", http.StatusBadRequest)
 			return
@@ -27,8 +28,12 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res, _ := bcrypt.GenerateFromPassword(body, bcrypt.DefaultCost)
+	if len(body) == 0 {
+		body := []byte{32}
+		rand.Read(body)
+	}
 
+	res, _ := bcrypt.GenerateFromPassword(body, bcrypt.DefaultCost)
 	w.Write(res)
 
 }

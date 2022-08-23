@@ -5,7 +5,7 @@ functions:
   bcrypt:
     lang: golang-middleware
     handler: ./bcrypt
-    image: alexellis2/bcrypt:0.1.1
+    image: alexellis2/bcrypt:0.1.2
     labels:
       com.openfaas.scale.min: 1
       com.openfaas.scale.max: 10
