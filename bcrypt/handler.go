@@ -53,8 +53,9 @@ func decodeValue(req []byte) bool {
 		return false
 	}
 
-	plain := data[:index]
 	hash := data[index+1:]
+	plain := data[:index]
+
 	if err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(plain)); err != nil {
 		return false
 	}
