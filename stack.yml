@@ -5,7 +5,7 @@ functions:
   bcrypt:
     lang: golang-middleware
     handler: ./bcrypt
-    image: ghcr.io/{$OWNER:-alexellis}/bcrypt:{$TAG:-latest}
+    image: ghcr.io/${OWNER:-alexellis}/bcrypt:${TAG:-latest}
     labels:
       com.openfaas.scale.min: 1
       com.openfaas.scale.max: 10
