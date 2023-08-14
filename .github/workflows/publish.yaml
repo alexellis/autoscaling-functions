@@ -1,4 +1,4 @@
-name: build
+name: publish
 
 on:
   push:
@@ -15,7 +15,7 @@ permissions:
   packages: write
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
