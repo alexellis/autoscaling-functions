@@ -12,6 +12,9 @@ functions:
       com.openfaas.scale.target: 500
       com.openfaas.scale.type: cpu
 
+      com.openfaas.scale.zero: true
+      com.openfaas.scale.zero-duration: 2m
+
       com.openfaas.git-branch: master
       com.openfaas.git-owner: ${OWNER:-alexellis}
       com.openfaas.git-repo: autoscaling-functions
@@ -30,6 +33,9 @@ functions:
       com.openfaas.scale.target: 50
       com.openfaas.scale.type: rps
 
+      com.openfaas.scale.zero: true
+      com.openfaas.scale.zero-duration: 5m
+
       com.openfaas.git-branch: master
       com.openfaas.git-owner: openfaas
       com.openfaas.git-repo: store-functions
@@ -45,6 +51,7 @@ functions:
       com.openfaas.scale.min: 1
       com.openfaas.scale.max: 10
       com.openfaas.scale.target: 5
+      com.openfaas.scale.target-proportion: 0.8
       com.openfaas.scale.type: capacity
 
       com.openfaas.git-branch: master
